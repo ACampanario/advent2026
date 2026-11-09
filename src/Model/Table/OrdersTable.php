@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Model\Table;
 
+use Cake\Database\Expression\FunctionExpression;
 use Cake\I18n\Date;
 use Cake\ORM\Query\SelectQuery;
 use Cake\ORM\RulesChecker;
@@ -208,7 +209,12 @@ class OrdersTable extends Table
 
         switch ($dimension) {
             case 'month':
-                $month = $func->to_char(['Orders.ordered_at' => 'identifier', "'YYYY-MM'" => 'literal']);
+                $month = new FunctionExpression(
+                    'to_char',
+                    ['Orders.ordered_at' => 'identifier', "'YYYY-MM'" => 'literal'],
+                    [],
+                    'string',
+                );
 
                 return $query
                     ->select([

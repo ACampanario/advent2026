@@ -39,9 +39,9 @@ class ConversationsController extends AppController
      *
      * @param \App\Service\Ai\TranscriptBuilder $transcriptBuilder Groups messages for display.
      * @param string $id Conversation id.
-     * @return void
+     * @return \Cake\Http\Response
      */
-    public function view(TranscriptBuilder $transcriptBuilder, string $id): void
+    public function view(TranscriptBuilder $transcriptBuilder, string $id): Response
     {
         $conversation = $this->Conversations->get((int)$id);
         $this->Authorization->authorize($conversation, 'view');
@@ -53,7 +53,8 @@ class ConversationsController extends AppController
         $this->set('conversation', $conversation);
         /** @see \App\Service\Ai\TranscriptBuilder::build() */
         $this->set('transcript', $transcriptBuilder->build($messages));
-        $this->render('index');
+
+        return $this->render('index');
     }
 
     /**

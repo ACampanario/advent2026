@@ -182,7 +182,7 @@ class AgentService
         $history = [];
         /** @see \App\Model\Table\MessagesTable::findHistory() */
         foreach ($this->messages->find('history', conversationId: $conversationId)->all() as $message) {
-            $history[] = $this->forApi(['role' => $message->role, 'content' => $message->content]);
+            $history[] = $this->forApi(['role' => $message->get('role'), 'content' => $message->get('content')]);
         }
 
         return $history;

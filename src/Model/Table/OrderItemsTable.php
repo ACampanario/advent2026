@@ -13,18 +13,18 @@ use Cake\Validation\Validator;
  * @property \App\Model\Table\OrdersTable&\Cake\ORM\Association\BelongsTo $Orders
  * @property \App\Model\Table\ProductsTable&\Cake\ORM\Association\BelongsTo $Products
  * @method \App\Model\Entity\OrderItem newEmptyEntity()
- * @method \App\Model\Entity\OrderItem newEntity(array $data, array $options = [])
- * @method array<\App\Model\Entity\OrderItem> newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\OrderItem get(mixed $primaryKey, array|string $finder = 'all', \Psr\SimpleCache\CacheInterface|string|null $cache = null, \Closure|string|null $cacheKey = null, mixed ...$args)
- * @method \App\Model\Entity\OrderItem findOrCreate($search, ?callable $callback = null, array $options = [])
- * @method \App\Model\Entity\OrderItem patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method array<\App\Model\Entity\OrderItem> patchEntities(iterable $entities, array $data, array $options = [])
- * @method \App\Model\Entity\OrderItem|false save(\Cake\Datasource\EntityInterface $entity, array $options = [])
- * @method \App\Model\Entity\OrderItem saveOrFail(\Cake\Datasource\EntityInterface $entity, array $options = [])
- * @method iterable<\App\Model\Entity\OrderItem>|\Cake\Datasource\ResultSetInterface<\App\Model\Entity\OrderItem>|false saveMany(iterable $entities, array $options = [])
- * @method iterable<\App\Model\Entity\OrderItem>|\Cake\Datasource\ResultSetInterface<\App\Model\Entity\OrderItem> saveManyOrFail(iterable $entities, array $options = [])
- * @method iterable<\App\Model\Entity\OrderItem>|\Cake\Datasource\ResultSetInterface<\App\Model\Entity\OrderItem>|false deleteMany(iterable $entities, array $options = [])
- * @method iterable<\App\Model\Entity\OrderItem>|\Cake\Datasource\ResultSetInterface<\App\Model\Entity\OrderItem> deleteManyOrFail(iterable $entities, array $options = [])
+ * @method \App\Model\Entity\OrderItem newEntity(array<string, mixed> $data, array<string, mixed> $options = [])
+ * @method array<\App\Model\Entity\OrderItem> newEntities(array<array<string, mixed>> $data, array<string, mixed> $options = [])
+ * @method \App\Model\Entity\OrderItem get(mixed $primaryKey, array<string, mixed>|string $finder = 'all', \Psr\SimpleCache\CacheInterface|string|null $cache = null, \Closure|string|null $cacheKey = null, mixed ...$args)
+ * @method \App\Model\Entity\OrderItem findOrCreate($search, ?callable $callback = null, array<string, mixed> $options = [])
+ * @method \App\Model\Entity\OrderItem patchEntity(\Cake\Datasource\EntityInterface $entity, array<string, mixed> $data, array<string, mixed> $options = [])
+ * @method array<\App\Model\Entity\OrderItem> patchEntities(iterable<\App\Model\Entity\OrderItem> $entities, array<array<string, mixed>> $data, array<string, mixed> $options = [])
+ * @method \App\Model\Entity\OrderItem|false save(\Cake\Datasource\EntityInterface $entity, array<string, mixed> $options = [])
+ * @method \App\Model\Entity\OrderItem saveOrFail(\Cake\Datasource\EntityInterface $entity, array<string, mixed> $options = [])
+ * @method iterable<\App\Model\Entity\OrderItem>|\Cake\Datasource\ResultSetInterface<\App\Model\Entity\OrderItem>|false saveMany(iterable<\App\Model\Entity\OrderItem> $entities, array<string, mixed> $options = [])
+ * @method iterable<\App\Model\Entity\OrderItem>|\Cake\Datasource\ResultSetInterface<\App\Model\Entity\OrderItem> saveManyOrFail(iterable<\App\Model\Entity\OrderItem> $entities, array<string, mixed> $options = [])
+ * @method iterable<\App\Model\Entity\OrderItem>|\Cake\Datasource\ResultSetInterface<\App\Model\Entity\OrderItem>|false deleteMany(iterable<\App\Model\Entity\OrderItem> $entities, array<string, mixed> $options = [])
+ * @method iterable<\App\Model\Entity\OrderItem>|\Cake\Datasource\ResultSetInterface<\App\Model\Entity\OrderItem> deleteManyOrFail(iterable<\App\Model\Entity\OrderItem> $entities, array<string, mixed> $options = [])
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
 class OrderItemsTable extends Table

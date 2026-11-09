@@ -11,7 +11,7 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property int $conversation_id
  * @property string $role
- * @property array $content
+ * @property list<array<string, mixed>> $content
  * @property string|null $stop_reason
  * @property string|null $model
  * @property int $input_tokens

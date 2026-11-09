@@ -12,18 +12,18 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\MessagesTable&\Cake\ORM\Association\BelongsTo $Messages
  * @method \App\Model\Entity\ToolCall newEmptyEntity()
- * @method \App\Model\Entity\ToolCall newEntity(array $data, array $options = [])
- * @method array<\App\Model\Entity\ToolCall> newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\ToolCall get(mixed $primaryKey, array|string $finder = 'all', \Psr\SimpleCache\CacheInterface|string|null $cache = null, \Closure|string|null $cacheKey = null, mixed ...$args)
- * @method \App\Model\Entity\ToolCall findOrCreate($search, ?callable $callback = null, array $options = [])
- * @method \App\Model\Entity\ToolCall patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method array<\App\Model\Entity\ToolCall> patchEntities(iterable $entities, array $data, array $options = [])
- * @method \App\Model\Entity\ToolCall|false save(\Cake\Datasource\EntityInterface $entity, array $options = [])
- * @method \App\Model\Entity\ToolCall saveOrFail(\Cake\Datasource\EntityInterface $entity, array $options = [])
- * @method iterable<\App\Model\Entity\ToolCall>|\Cake\Datasource\ResultSetInterface<\App\Model\Entity\ToolCall>|false saveMany(iterable $entities, array $options = [])
- * @method iterable<\App\Model\Entity\ToolCall>|\Cake\Datasource\ResultSetInterface<\App\Model\Entity\ToolCall> saveManyOrFail(iterable $entities, array $options = [])
- * @method iterable<\App\Model\Entity\ToolCall>|\Cake\Datasource\ResultSetInterface<\App\Model\Entity\ToolCall>|false deleteMany(iterable $entities, array $options = [])
- * @method iterable<\App\Model\Entity\ToolCall>|\Cake\Datasource\ResultSetInterface<\App\Model\Entity\ToolCall> deleteManyOrFail(iterable $entities, array $options = [])
+ * @method \App\Model\Entity\ToolCall newEntity(array<string, mixed> $data, array<string, mixed> $options = [])
+ * @method array<\App\Model\Entity\ToolCall> newEntities(array<array<string, mixed>> $data, array<string, mixed> $options = [])
+ * @method \App\Model\Entity\ToolCall get(mixed $primaryKey, array<string, mixed>|string $finder = 'all', \Psr\SimpleCache\CacheInterface|string|null $cache = null, \Closure|string|null $cacheKey = null, mixed ...$args)
+ * @method \App\Model\Entity\ToolCall findOrCreate($search, ?callable $callback = null, array<string, mixed> $options = [])
+ * @method \App\Model\Entity\ToolCall patchEntity(\Cake\Datasource\EntityInterface $entity, array<string, mixed> $data, array<string, mixed> $options = [])
+ * @method array<\App\Model\Entity\ToolCall> patchEntities(iterable<\App\Model\Entity\ToolCall> $entities, array<array<string, mixed>> $data, array<string, mixed> $options = [])
+ * @method \App\Model\Entity\ToolCall|false save(\Cake\Datasource\EntityInterface $entity, array<string, mixed> $options = [])
+ * @method \App\Model\Entity\ToolCall saveOrFail(\Cake\Datasource\EntityInterface $entity, array<string, mixed> $options = [])
+ * @method iterable<\App\Model\Entity\ToolCall>|\Cake\Datasource\ResultSetInterface<\App\Model\Entity\ToolCall>|false saveMany(iterable<\App\Model\Entity\ToolCall> $entities, array<string, mixed> $options = [])
+ * @method iterable<\App\Model\Entity\ToolCall>|\Cake\Datasource\ResultSetInterface<\App\Model\Entity\ToolCall> saveManyOrFail(iterable<\App\Model\Entity\ToolCall> $entities, array<string, mixed> $options = [])
+ * @method iterable<\App\Model\Entity\ToolCall>|\Cake\Datasource\ResultSetInterface<\App\Model\Entity\ToolCall>|false deleteMany(iterable<\App\Model\Entity\ToolCall> $entities, array<string, mixed> $options = [])
+ * @method iterable<\App\Model\Entity\ToolCall>|\Cake\Datasource\ResultSetInterface<\App\Model\Entity\ToolCall> deleteManyOrFail(iterable<\App\Model\Entity\ToolCall> $entities, array<string, mixed> $options = [])
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
 class ToolCallsTable extends Table

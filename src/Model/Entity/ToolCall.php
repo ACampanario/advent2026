@@ -12,7 +12,7 @@ use Cake\ORM\Entity;
  * @property int $message_id
  * @property string $tool_use_id
  * @property string $name
- * @property array $input
+ * @property array<string, mixed> $input
  * @property int $row_count
  * @property bool $truncated
  * @property bool $is_error

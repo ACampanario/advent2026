@@ -18,6 +18,7 @@ namespace App;
 
 use Anthropic\Client;
 use App\Middleware\HostHeaderMiddleware;
+use App\Middleware\RateLimitFlashMiddleware;
 use App\Model\Table\CustomersTable;
 use App\Model\Table\MessagesTable;
 use App\Model\Table\OrdersTable;
@@ -50,6 +51,7 @@ use Cake\Event\EventManagerInterface;
 use Cake\Http\BaseApplication;
 use Cake\Http\Middleware\BodyParserMiddleware;
 use Cake\Http\Middleware\CsrfProtectionMiddleware;
+use Cake\Http\Middleware\RateLimitMiddleware;
 use Cake\Http\MiddlewareQueue;
 use Cake\ORM\Locator\TableContainer;
 use Cake\ORM\Locator\TableLocator;
@@ -68,6 +70,16 @@ class Application extends BaseApplication implements
     AuthenticationServiceProviderInterface,
     AuthorizationServiceProviderInterface
 {
+    /**
+     * Chat messages allowed per user and window.
+     */
+    private const CHAT_RATE_LIMIT = 10;
+
+    /**
+     * Rate limit window, in seconds.
+     */
+    private const CHAT_RATE_WINDOW = 60;
+
     /**
      * Load all the application configuration and bootstrap logic.
      *
@@ -127,6 +139,22 @@ class Application extends BaseApplication implements
 
             // Identify the user from the session (demo profile selector, no password).
             ->add(new AuthenticationMiddleware($this))
+
+            // Per-user rate limit on the chat message route (the one that calls the API).
+            // Placed after authentication so the limit is keyed by identity, not by IP.
+            ->add(new RateLimitFlashMiddleware(self::CHAT_RATE_LIMIT, self::CHAT_RATE_WINDOW))
+            ->add(new RateLimitMiddleware([
+                'limit' => self::CHAT_RATE_LIMIT,
+                'window' => self::CHAT_RATE_WINDOW,
+                'identifier' => RateLimitMiddleware::IDENTIFIER_USER,
+                'cache' => 'default',
+                'skipCheck' => function (ServerRequestInterface $request): bool {
+                    $params = $request->getAttribute('params', []);
+
+                    return ($params['controller'] ?? null) !== 'Conversations'
+                        || ($params['action'] ?? null) !== 'message';
+                },
+            ]))
 
             // Policies and scopes: the security boundary of the agent tools.
             ->add(new AuthorizationMiddleware($this));

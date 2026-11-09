@@ -45,7 +45,7 @@ abstract class AbstractTool implements AgentToolInterface
     /**
      * Runs a scoped query with the row cap and returns the rows plus `truncated` / `total`.
      *
-     * @param \Cake\ORM\Query\SelectQuery<mixed> $query Scoped query.
+     * @param \Cake\ORM\Query\SelectQuery<\Cake\Datasource\EntityInterface|array<string, mixed>> $query Scoped query.
      * @param string $key Key of the row list in the payload.
      * @return \App\Service\Ai\Tool\ToolResult
      */
