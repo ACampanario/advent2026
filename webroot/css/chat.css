@@ -1,0 +1,49 @@
+/* Shop Assistant: custom styles on top of Bootstrap 5. */
+
+/* Chat column: messages scroll, composer stays at the bottom. */
+.chat-panel {
+    min-height: calc(100vh - 8rem);
+}
+
+.chat-messages {
+    max-height: calc(100vh - 14rem);
+    overflow-y: auto;
+}
+
+/* Bubbles never take the whole width. */
+.chat-bubble {
+    max-width: 85%;
+    overflow-wrap: anywhere;
+}
+
+/* Markdown answers: tables, lists and code inside the bubble. */
+.chat-answer table {
+    width: 100%;
+    margin-bottom: 0.75rem;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.chat-answer th,
+.chat-answer td {
+    padding: 0.25rem 0.5rem;
+    border: 1px solid var(--bs-border-color);
+}
+
+.chat-answer th {
+    background-color: var(--bs-tertiary-bg);
+}
+
+.chat-answer p:last-child,
+.chat-answer ul:last-child,
+.chat-answer ol:last-child {
+    margin-bottom: 0.5rem;
+}
+
+.chat-answer pre,
+.chat-json {
+    max-height: 20rem;
+    overflow: auto;
+    font-size: 0.75rem;
+    white-space: pre-wrap;
+}
