@@ -117,7 +117,7 @@ class ConversationsTable extends Table
     public function findSidebar(SelectQuery $query): SelectQuery
     {
         $func = $query->func();
-        $tokens = $query->newExpr(
+        $tokens = $query->expr(
             'Messages.input_tokens + Messages.output_tokens'
             . ' + Messages.cache_creation_input_tokens + Messages.cache_read_input_tokens',
         );
